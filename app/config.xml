@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.xvilo.NopAPP"
+        versionCode = "1" 
+        version     = "0.0.2.1" >
+
+        <!-- versionCode is optional and Android only -->
+
+        <name>NopAPP</name>
+        
+        <description>
+            Het beste van de NOP in handbereik met deze app! Info, winkelen, uitgaan en meer!
+        </description>
+        
+        <author href="https://apps.xvilo.com" email="me@xvilo.com">
+            Sem Schilder
+        </author>
+
+        <gap:platform name="android" />
+
+        <preference name="phonegap-version" value="3.1.0" />
+
+        <preference name="orientation" value="portrait" />
+        <preference name="fullscreen" value="true" />
+        <preference name="android-minSdkVersion" value="104" />
+
+        <icon src="icon.png" />
+</widget>

@@ -1,0 +1,18 @@
+[{
+    "title": "De klos",
+    "lat": 52.714506,
+    "lng": 5.747903,
+    "description": "Stockholm is the capital and the largest city of Sweden and constitutes the most populated urban area in Scandinavia with a population of 2.1 million in the metropolitan area (2010)"
+  },
+  {
+    "title": "Chez",
+    "lat": 52.709293,
+    "lng": 5.875271,
+    "description": "Oslo is a municipality, and the capital and most populous city of Norway with a metropolitan population of 1,442,318 (as of 2010)."
+  },
+  {
+    "title": "Eindeloos",
+    "lat": 52.711407,
+    "lng": 5.753220,
+    "description": "Copenhagen is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
+  }]

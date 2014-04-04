@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    
+    <link rel="apple-touch-icon-precomposed" href="icon_ios.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+     <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script type="text/javascript">
+      $( document ).on( "pagecreate", "#locator", function() {
+        var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
+        if ( navigator.geolocation ) {
+            function success(pos) {
+                // Location found, show map with these coordinates
+                drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+            }
+            function fail(error) {
+                drawMap(defaultLatLng);  // Failed to find location, show default map
+            }
+            // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+            navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+        } else {
+            drawMap(defaultLatLng);  // No geolocation support, show default map
+        }
+        function drawMap(latlng) {
+            var myOptions = {
+                zoom: 10,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+            // Add an overlay to the map of current lat/lng
+           // var marker = new google.maps.Marker({
+           //     position: latlng,
+        //        map: map,
+        //        title: "Greetings!"
+          //  });
+            
+            $.getJSON("foo.json", function(json1) {
+          $.each(json1, function(key, data) {
+            var latLng = new google.maps.LatLng(data.lat, data.lng); 
+            // Creating a marker and putting it on the map
+            var marker = new google.maps.Marker({
+                position: latLng,
+                title: data.title
+            });
+            marker.setMap(map);
+          });
+        });
+            
+        }
+    });
+      
+         $( document ).on( "pagecreate", "#jonginnop", function() {
+                $('#jinc').load('http://apps.xvilo.com/assets/nopapp/GetFeed.php');
+         });
+      
+        </script>
+<body>
+    <div id="start" data-role="page">
+        <div data-role="header"> 
+            <h1 class="logo">NopApp</h1> 
+        </div> 
+        <a href="#discounts"><div class="block yellowgr toporange"><center><img src="img/korting.png" width="320px"></center></div></a>
+        <a href="#jonginnop"><div class="block two yellow"><center><img src="img/jonginnop.svg" height="119"></center></div></a>
+        <div class="block two yellow last"><center><img height="119" src="img/Comingsoon.svg"></center></div>
+       <!-- <div class="block small blue">
+            <p><center>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:320px;height:50px"
+                     data-ad-client="ca-pub-2406264984624429"
+                     data-ad-slot="2923319865"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </center></p>
+        </div>
+        <div class="block two"><p>two 1</p></div>
+        <div class="block two last"><p>two 2</p></div> -->
+        <div class="clear"></div>
+        <a href="#locator" class="maps" data-transition="slide"><div class="block small blue">
+            <Center><img height="50px" src="img/uitlocator.png"></Center>
+        </div></a>
+        <footer>
+            <p>Derde partijen merkrechten worden met licentie-overeenkomst gebruikt.<bR>&copy;2014 D3 Digital Media NOPAPP is not a registered trademark<br> of D3 Digital Media.</p>
+        </footer>
+    </div>
+    
+    <div id="locator" data-role="page">
+        <div class="navgroen" data-role="header"> 
+            <a href="#" data-transition="slide" data-rel="back">back</a><h1>locator</h1> 
+        </div> 
+        
+            <div id="map-canvas"></div>
+        
+    </div>
+    
+    <div id="discounts" data-role="page">
+        <div class="navgroen" data-role="header"> 
+            <a href="#" data-transition="slide" data-rel="back">back</a><h1>Kortingen</h1>
+        </div> 
+        <div role="main" class="ui-content"><p>Er zijn op dit moment geen kortingen beschikbaar!</p><p> Kom later nog eens terug!</p>
+        <h6>Bent u een ondernemer in of rond De Noordoostpolder en wilt u hier adverteren? Stuur ons een email <a href="mailto:sem@thisisd3.com">Sem</a></h6>
+        </div>
+    </div>
+    
+    <div id="jonginnop" data-role="page">
+        <div class="navgroen" data-role="header"> 
+            <a href="#" data-transition="slide" data-rel="back">back</a><h1>Jonginnop</h1>
+        </div> 
+        <div role="main" id="jinc" class="ui-content">
+            <center><h1>Loading....</h1><br><img src="css/images/ajax-loader.gif"></center>
+        </div>
+    </div>
+</body>
+</html>
