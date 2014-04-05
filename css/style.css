@@ -68,9 +68,9 @@ width:100%;}
 }
 
 .two {
-    width:50%;
+    width: 50vw;
+    height: 50vw;
     float:left;
-    height:120px;
 }
 
 .last {
