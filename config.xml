@@ -26,4 +26,7 @@
         <preference name="android-minSdkVersion" value="104" />
 
         <icon src="icon.png" />
+        
+        <!-- plugins -->
+        <gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
 </widget>
