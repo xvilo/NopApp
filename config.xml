@@ -23,7 +23,6 @@
 
         <preference name="orientation" value="portrait" />
         <preference name="fullscreen" value="true" />
-        <preference name="android-minSdkVersion" value="104" />
 
         <icon src="icon.png" />
         
