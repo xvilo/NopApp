@@ -25,8 +25,9 @@
         <preference name="orientation" value="portrait" />
         <preference name="fullscreen" value="true" />
         
-        <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
+        <gap:plugin name="com.phonegap.plugin.statusbar" />
         <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColorByHexString" value="#5ba239" />
         
         <icon src="icon.png" />
         <!-- iPhone / iPod Touch  -->
