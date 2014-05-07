@@ -42,6 +42,7 @@
         <icon src="icon-40.png" gap:platform="ios" width="40" height="40" />
         <icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />
         
+        
         <!-- iPhone and iPod touch -->
         <gap:splash src="Default.png" gap:platform="ios" width="320" height="480" />
         <gap:splash src="Default@2x.png" gap:platform="ios" width="640" height="960" />
