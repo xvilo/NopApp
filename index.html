@@ -4,6 +4,7 @@
     
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.css" />
     <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" charset="utf-8" src="iAd"></script>
     
     <script src="js/jquery.js"></script>
     <script src="js/jquery-1.11.0.min.js"></script>
@@ -67,7 +68,7 @@
          });
       
         </script>
-<body>
+<body onload="onBodyLoad()">
     <div id="start" data-role="page">
         <div data-role="header"> 
             <h1 class="logo">NopApp</h1> 
@@ -94,6 +95,18 @@
         <a href="#locator" class="maps" data-transition="slide"><div class="block small blue">
             <Center><img height="50px" src="img/uitlocator.png"></Center>
         </div></a>
+        
+        <br /><br />
+        <form>
+            <input type="checkbox" id="showAd" name="showAd" disabled="disabled" onclick="showAdClicked(this);">Show iAd</input><br />
+            <br />
+            <span>New Ad Loaded: <span id="lastAdLoaded">Waiting.</span></span><br />
+            <span>Total Ads Loaded: <span id="totalAdsLoaded">None.</span></span>
+        </form>
+        <br />
+        <span style="position:absolute;bottom:0">
+            This is some text at the bottom of the webview.
+        </span>
         <footer>
             <p>Derde partijen merkrechten worden met licentie-overeenkomst gebruikt.<bR>&copy;2014 D3 Digital Media NOPAPP is not a registered trademark<br> of D3 Digital Media.</p>
         </footer>

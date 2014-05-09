@@ -55,5 +55,6 @@
         <gap:splash src="Default-568@2x.png" gap:platform="ios" width="640" height="1136" />
         
         <!-- plugins -->
-        <gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
+        <gap:plugin name="com.adobe.plugins.gaplugin" />
+        <gap:plugin name="com.rjfun.cordova.plugin.iad"  />
 </widget>
